@@ -6,7 +6,7 @@ angular.module('orderBookApp', [
 
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('ìndex', {
+    $stateProvider.state('index', {
         url: '/',
         templateUrl: 'views/contacts.html',
         controller: 'contactController'
