@@ -25,9 +25,46 @@ app.get('/', function(req, res) {
      res.sendFile(__dirname + '/app/index.html');
 });
 
-// app.get('/',function(req,res){
-// 	res.send('HELLO WELCOME TO HEMANTH WORLD');
-// });
+var sampleJson = {
+    "contractName": "NewYork",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}\\server.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "console": "internalConsole",
+            "sourceMaps": false,
+            "outFiles": []
+        },
+       
+        {
+            "name": "Attach to Process",
+            "type": "node",
+            "request": "attach",
+            "processId": "${command.PickProcess}",
+            "port": 8000,
+            "sourceMaps": false,
+            "outFiles": []
+        }
+    ]
+};
+
+app.get('/getContractDetails',function(req,res){
+	console.log('hello');
+	res.send(sampleJson);
+});
 
 
 // Start server

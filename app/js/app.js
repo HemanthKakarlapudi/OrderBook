@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('orderBookApp', [
-    'ui.router'
+    'ui.router',
+    'ngResource'
 ]).config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
