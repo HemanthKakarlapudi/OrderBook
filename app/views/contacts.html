@@ -1,6 +1,151 @@
-
-
 <form ng-init="init()">
 
-<h3>{{message}}</h3>
 </form>
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="header-line" style="    background-color: #00dbce;
+    height: 10px;"></div>
+    <div class="container">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            <a><img src="../assets/images/logo.png" height="70px" width="70px" alt="logo">
+        </a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>
+
+<main>
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- UI View -->
+                <!-- uiView: -->
+                <ui-view class="ng-scope">
+                    <request-form class="ng-scope ng-isolate-scope">
+                        <div>
+                            <h3 class="ng-binding">Heading</h3>
+                            <!-- Company -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 style="cursor: pointer;" class="ng-binding">
+                                        Sub Heading </h5>
+                                </div>
+
+                            </div>
+
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="background-color:#f5f5f5;">
+                                            <th class="col-md-4">Contracts <span class="sortable"></span></th>
+                                            <th class="col-md-4">Details</th>
+                                            <th class="col-md-4">Order Specifications</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Contract</th>
+                                                            <th>Exchange</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td>
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Order Size</th>
+                                                            <th>1</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Thick Size</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td>
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Price</th>
+                                                            <th>1</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Quantity</td>
+                                                            <td>1</td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+
+
+
+
+
+                                <!-- Submit -->
+                                <button type="submit" class="btn btn-primary pull-right ng-binding" ng-disabled="formRequestBond.$invalid" disabled="disabled">Next</button>
+                                </form>
+                            </div>
+                    </request-form>
+                </ui-view>
+                </div>
+            </div>
+        </div>
+</main>
