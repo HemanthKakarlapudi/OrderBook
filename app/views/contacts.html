@@ -68,8 +68,8 @@
                                     <thead>
                                         <tr style="background-color:#f5f5f5;">
                                             <th class="col-md-4">Contracts <span class="sortable"></span></th>
-                                            <th class="col-md-4">Details</th>
-                                            <th class="col-md-4">Order Specifications</th>
+                                            <th class="col-md-4">Bids</th>
+                                            <th class="col-md-4">Asks</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -78,14 +78,14 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Contract</th>
-                                                            <th>Exchange</th>
+                                                            <th>Instrument</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody ng-repeat="value in contractDetails.instrument">
                                                         <tr>
-                                                            <td>1</td>
-                                                            <td>1</td>
+                                                            <td>{{value.contract}}</td>
+                                                            <td></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -94,16 +94,16 @@
                                             <td>
 
                                                 <table class="table">
-                                                    <thead>
+                                                    <thead >
                                                         <tr>
-                                                            <th>Order Size</th>
-                                                            <th>1</th>
+                                                            <th>Price</th>
+                                                            <th>Quantity</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Thick Size</td>
-                                                            <td>1</td>
+                                                    <tbody ng-repeat="result in contractDetails.instrument">
+                                                        <tr ng-repeat="value in result.bids">
+                                                            <td>{{value.price}}</td>
+                                                            <td>{{value.quantity}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -115,14 +115,14 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Price</th>
-                                                            <th>1</th>
+                                                            <th>Quantity</th>
 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Quantity</td>
-                                                            <td>1</td>
+                                                    <tbody ng-repeat="data in contractDetails.instrument">
+                                                        <tr ng-repeat="value in data.asks">
+                                                            <td>{{value.price}}</td>
+                                                            <td>{{value.quantity}}</td>
 
                                                         </tr>
                                                     </tbody>
