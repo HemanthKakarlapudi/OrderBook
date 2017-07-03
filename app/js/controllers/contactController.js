@@ -14,8 +14,7 @@ $scope.message = 'Hello World!'; 
                 .then(
                     function(data) {
 
-                    	$scope.message = data.contractName;
-                      console.log('data : ',data);
+                    console.log('Forecast received for location : ');
                     },
                     function(error) {
                       console.log('Failed to retreive forecast');

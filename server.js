@@ -26,38 +26,50 @@ app.get('/', function(req, res) {
 });
 
 var sampleJson = {
-    "contractName": "NewYork",
-    "configurations": [
-        {
-            "name": "Launch",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}\\server.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "development"
-            },
-            "console": "internalConsole",
-            "sourceMaps": false,
-            "outFiles": []
-        },
-       
-        {
-            "name": "Attach to Process",
-            "type": "node",
-            "request": "attach",
-            "processId": "${command.PickProcess}",
-            "port": 8000,
-            "sourceMaps": false,
-            "outFiles": []
-        }
+    "instrument": "A",
+    "bids": [
+      {
+        "price": 2502.28,
+        "quantity": 80
+      },
+      {
+        "price": 2501.21,
+        "quantity": 80
+      },
+      {
+        "price": 2501.16,
+        "quantity": 80
+      },
+      {
+        "price": 2500.39,
+        "quantity": 80
+      },
+      {
+        "price": 2500.1,
+        "quantity": 80
+      }
+    ],
+    "asks": [
+      {
+        "price": 2505.19,
+        "quantity": 80
+      },
+      {
+        "price": 2505.96,
+        "quantity": 80
+      },
+      {
+        "price": 2506.9,
+        "quantity": 80
+      },
+      {
+        "price": 2507.68,
+        "quantity": 80
+      },
+      {
+        "price": 2507.81,
+        "quantity": 80
+      }
     ]
 };
 
