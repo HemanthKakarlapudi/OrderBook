@@ -26,7 +26,8 @@ app.get('/', function(req, res) {
 });
 
 var sampleJson = {
-    "instrument": "A",
+    "instrument": [{
+    "contract":"A",
     "bids": [
       {
         "price": 2502.28,
@@ -71,7 +72,55 @@ var sampleJson = {
         "quantity": 80
       }
     ]
-};
+  }
+  //,{
+  //   "contract":"B",
+  //   "bids": [
+  //     {
+  //       "price": 2502.28,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2501.21,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2501.16,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2500.39,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2500.1,
+  //       "quantity": 80
+  //     }
+  //   ],
+  //   "asks": [
+  //     {
+  //       "price": 2505.19,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2505.96,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2506.9,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2507.68,
+  //       "quantity": 80
+  //     },
+  //     {
+  //       "price": 2507.81,
+  //       "quantity": 80
+  //     }
+  //   ]
+  //   }
+    ]};
 
 app.get('/getContractDetails',function(req,res){
 	console.log('hello');

@@ -13,8 +13,8 @@ $scope.message = 'Hello World!'; 
       orderBookService.getInitialContractDetails()
                 .then(
                     function(data) {
-
                     console.log('Forecast received for location : ');
+                    $scope.contractDetails = data;
                     },
                     function(error) {
                       console.log('Failed to retreive forecast');
