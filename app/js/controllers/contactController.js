@@ -1,11 +1,11 @@
-angular.module('orderBookApp').controller('contactController', function($scope,orderBookService) {
+angular.module('orderBookApp').controller('contactController', function($scope,orderBookService,$interval ) {
 $scope.message = 'Hello World!'; 
 
   $scope.init = function(){
-  	getIntialContractDetails();
+     $scope.counter = 0;
+     $interval(getIntialContractDetails, 10000, 10);
   }
-
-         var  getIntialContractDetails = function() {
+  var  getIntialContractDetails = function() {
 
       $scope.message = '';
 
@@ -13,6 +13,7 @@ $scope.message = 'Hello World!'; 
       orderBookService.getInitialContractDetails()
                 .then(
                     function(data) {
+                      $scope.counter = $scope.counter + 1;
 
                     console.log('Forecast received for location : ',data);
 
