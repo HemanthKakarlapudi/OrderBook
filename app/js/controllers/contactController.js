@@ -7,14 +7,18 @@ $scope.sort = function(keyname){
     }
   $scope.init = function(){
      $scope.counter = 0;
-     $interval(getIntialContractDetails, 10000, 10);
+     
+       $interval(getIntialContractDetails, 10000, 10);
+     
+    
+    //getIntialContractDetails($scope.counter);
   }
   var  getIntialContractDetails = function() {
 
       $scope.message = '';
 
       console.log('**** Before calling Factory method ****');
-      orderBookService.getInitialContractDetails()
+      orderBookService.getInitialContractDetails($scope.counter)
                 .then(
                     function(data) {
                       $scope.counter = $scope.counter + 1;

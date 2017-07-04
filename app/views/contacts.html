@@ -100,7 +100,9 @@
                                                             <th ng-click="sort('price')">Price
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='price'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
-                                                            <td ng-repeat="result in value.bids|orderBy:sortKey:reverse track by $index">{{result.price}}</td>
+                                                           <!--  <td ng-repeat="result in value.bids|orderBy:sortKey:reverse track by $index"> -->
+                                                            <td ng-repeat="result in value.bids|orderBy:'-price'">
+                                                           {{result.price}}</td>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -108,7 +110,8 @@
                                                              <th ng-click="sort('qty')">Quantity
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='qty'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
-                                                            <td ng-repeat="result in value.bids|orderBy:sortKey:reverse track by $index">{{result.quantity}}</td>
+                                                            <td ng-repeat="result in value.bids|orderBy:'-quantity'">
+                                                            {{result.quantity}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -122,7 +125,9 @@
                                                             <th ng-click="sort('askprice')">Price
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='askprice'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
-                                                            <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index">{{result.price}}</td>
+                                                           <!--  <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index"> -->
+                                                            <td ng-repeat="result in value.asks|orderBy:'-price'">
+                                                            {{result.price}}</td>
 
                                                         </tr>
                                                     </thead>
@@ -131,7 +136,9 @@
                                                             <th ng-click="sort('askqty')">Quantity
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='askqty'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
-                                                            <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index">{{result.quantity}}</td>
+                                                            <!-- <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index"> -->
+                                                                 <td ng-repeat="result in value.asks|orderBy:'-quantity'">
+                                                            {{result.quantity}}</td>
 
                                                         </tr>
                                                     </tbody>
