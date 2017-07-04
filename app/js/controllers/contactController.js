@@ -1,6 +1,6 @@
 angular.module('orderBookApp').controller('contactController', function($scope,orderBookService,$interval ) {
 $scope.message = 'Hello World!'; 
-
+$scope.contentLoad = false;
   $scope.init = function(){
      $scope.counter = 0;
      $interval(getIntialContractDetails, 10000, 10);
@@ -18,6 +18,7 @@ $scope.message = 'Hello World!'; 
                     console.log('Forecast received for location : ',data);
 
                     $scope.contractDetails = data;
+                    $scope.contentLoad = true;
                     },
                     function(error) {
                       console.log('Failed to retreive forecast');
