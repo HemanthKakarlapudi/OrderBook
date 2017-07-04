@@ -42,6 +42,7 @@
     <!--/.container-fluid -->
 </nav>
 {{counter}}
+
 <main>
     <div class="container">
 
@@ -96,14 +97,18 @@
                                                 <table class="table">
                                                     <thead >
                                                         <tr>
-                                                            <th>Price</th>
-                                                            <th>Quantity</th>
+                                                            <th ng-click="sort('price')">Price
+                                                                <span class="glyphicon sort-icon" ng-show="sortKey==='price'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                            </th>
+                                                            <td ng-repeat="result in value.bids|orderBy:sortKey:reverse track by $index">{{result.price}}</td>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr ng-repeat="result in value.bids">
-                                                            <td>{{result.price}}</td>
-                                                            <td>{{result.quantity}}</td>
+                                                        <tr >
+                                                             <th ng-click="sort('qty')">Quantity
+                                                                <span class="glyphicon sort-icon" ng-show="sortKey==='qty'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                            </th>
+                                                            <td ng-repeat="result in value.bids|orderBy:sortKey:reverse track by $index">{{result.quantity}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -114,15 +119,19 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Price</th>
-                                                            <th>Quantity</th>
+                                                            <th ng-click="sort('askprice')">Price
+                                                                <span class="glyphicon sort-icon" ng-show="sortKey==='askprice'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                            </th>
+                                                            <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index">{{result.price}}</td>
 
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr ng-repeat="result in value.asks">
-                                                            <td>{{result.price}}</td>
-                                                            <td>{{result.quantity}}</td>
+                                                        <tr >
+                                                            <th ng-click="sort('askqty')">Quantity
+                                                                <span class="glyphicon sort-icon" ng-show="sortKey==='askqty'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                            </th>
+                                                            <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index">{{result.quantity}}</td>
 
                                                         </tr>
                                                     </tbody>

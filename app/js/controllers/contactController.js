@@ -1,6 +1,10 @@
 angular.module('orderBookApp').controller('contactController', function($scope,orderBookService,$interval ) {
 $scope.message = 'Hello World!'; 
 $scope.contentLoad = false;
+$scope.sort = function(keyname){
+        $scope.sortKey = keyname;   //set the sortKey to the param passed
+        $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+    }
   $scope.init = function(){
      $scope.counter = 0;
      $interval(getIntialContractDetails, 10000, 10);
