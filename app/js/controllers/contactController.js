@@ -8,10 +8,10 @@ $scope.sort = function(keyname){
   $scope.init = function(){
      $scope.counter = 0;
      
-       $interval(getIntialContractDetails, 10000, 10);
+     //  $interval(getIntialContractDetails, 10000, 10);
      
     
-    //getIntialContractDetails($scope.counter);
+    getIntialContractDetails();
   }
   var  getIntialContractDetails = function() {
 

@@ -53,12 +53,12 @@
                 <ui-view class="ng-scope">
                     <request-form class="ng-scope ng-isolate-scope">
                         <div>
-                            <h3 class="ng-binding">Heading</h3>
+                            <h3 class="ng-binding">Bidding Process</h3>
                             <!-- Company -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h5 style="cursor: pointer;" class="ng-binding">
-                                        Sub Heading </h5>
+                                        Bidding Details </h5>
                                 </div>
 
                             </div>
@@ -74,7 +74,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="value in contractDetails">
+                                        <tr ng-repeat="value in contractDetails.orderBook">
                                             <td>
                                                 <table class="table">
                                                     <thead>
@@ -126,7 +126,7 @@
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='askprice'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
                                                            <!--  <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index"> -->
-                                                            <td ng-repeat="result in value.asks|orderBy:'-price'">
+                                                            <td ng-repeat="result in value.asks|orderBy:'price'">
                                                             {{result.price}}</td>
 
                                                         </tr>
@@ -137,7 +137,7 @@
                                                                 <span class="glyphicon sort-icon" ng-show="sortKey==='askqty'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                                                             </th>
                                                             <!-- <td ng-repeat="result in value.asks|orderBy:sortKey:reverse track by $index"> -->
-                                                                 <td ng-repeat="result in value.asks|orderBy:'-quantity'">
+                                                                 <td ng-repeat="result in value.asks|orderBy:'quantity'">
                                                             {{result.quantity}}</td>
 
                                                         </tr>

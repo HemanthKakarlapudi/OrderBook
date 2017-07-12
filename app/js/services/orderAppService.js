@@ -19,10 +19,11 @@ var config = {
  params: data,
  headers : {'Accept' : 'application/json'}
 };
-console.log(config);                 
 $http.get('/getContractDetails',config)
    .then(
        function(response){
+
+        console.log(response);
          deferred.resolve(response.data);
        }, 
        function(response){
