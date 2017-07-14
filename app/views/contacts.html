@@ -1,8 +1,5 @@
 <form ng-init="init()">
-
-</form>
-
-<div id="loader" ng-hide="contentLoad"></div>
+<!-- <div id="loader" ng-hide="contentLoad"></div> -->
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="header-line" style="    background-color: #00dbce;
     height: 10px;"></div>
@@ -149,6 +146,115 @@
                                     </tbody>
                                 </table>
 
+                                 <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="background-color:#f5f5f5;">
+                                            <th class="col-md-2">Active <span class="sortable"></span></th>
+                                            <th class="col-md-2">theoBid</th>
+                                            <th class="col-md-2">theoAsk</th>
+                                             <th class="col-md-2">offsetBid</th>
+                                            <th class="col-md-2">offsetAsk</th>
+                                             <th class="col-md-2">defaultReturn</th>
+                                            <th class="col-md-2">quantity</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr >
+                                            <td><div class="checkbox"> <label><input type="checkbox" ng-model="contractDetails.strategyValues.active">{{contractDetails.strategyValues.instrument}}</label>
+                                            </div>
+                                             <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.theoBid}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    
+                                                </table>
+
+                                            </td>
+                                              <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.theoAsk}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    
+                                                </table>
+
+                                            </td>
+                                            <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.offsetBid}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr >
+                                                            <td><input type="text" class="form-control" id="exampleInputName2" ng-model="newOrderDetilsObject.offsetBid"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.offsetAsk}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr >
+                                                            <td><input type="text" class="form-control" id="exampleInputName2" ng-model="newOrderDetilsObject.offsetAsk"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.defaultReturn}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr >
+                                                            <td><input type="text" class="form-control" id="exampleInputName2" ng-model="newOrderDetilsObject.defaultReturn"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>           
+                                             <td>
+
+                                                <table class="table">
+                                                    <thead >
+                                                        <tr>
+                                                           <td>{{contractDetails.strategyValues.quantity}}</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr >
+                                                            <td><input type="text" class="form-control" id="exampleInputName2" ng-model="newOrderDetilsObject.quantity"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>                                                   
+                                        </tr>
+                                    </tbody>
+                                </table>
+
 
 
 
@@ -156,7 +262,12 @@
 
 
                                 <!-- Submit -->
-                                <button type="submit" class="btn btn-primary pull-right ng-binding" style="background-color:#00dbce;border-color:#f5f5f5;color:black">Next</button>
+                             <!--    <button type="submit" class="btn btn-primary pull-right ng-binding" style="background-color:#00dbce;border-color:#f5f5f5;color:black">Update</button> -->
+
+                                <!--  <button ng-click="isProcessToStop()" class="btn btn-primary pull-right ng-binding" style="background-color:#00dbce;border-color:#f5f5f5;color:black">stop</button>
+ -->
+ <button  type="button" ng-click="isProcessToStop()" class="btn btn-warning">Stop Process</button>
+<button  type="button" ng-click="submit()" class="btn btn-success">Update Process</button>
                                 </form>
                             </div>
                     </request-form>
